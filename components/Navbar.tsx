@@ -10,6 +10,7 @@ import Logo from '../utils/tiktik-logo.png';
 import useAuthStore from '../store/authStore';
 import { createOrGetUser } from '../utils';
 
+
 const Navbar = () => {
    const { userProfile, addUser, removeUser } = useAuthStore();
    const [searchValue, setSearchValue] = useState('');
@@ -94,6 +95,7 @@ const Navbar = () => {
        </div>
     </div>
   )
+  
 }
 
 export default Navbar
