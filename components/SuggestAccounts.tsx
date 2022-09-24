@@ -9,8 +9,7 @@ import { IUser } from '../type';
 const SuggestAccounts = () => {
   const {fetchAllUsers, allUsers} = useAuthStore();
   useEffect(()=> {
-    fetchAllUsers();
-
+    fetchAllUsers(); 
   }, [fetchAllUsers]);
   return (
     
@@ -18,8 +17,7 @@ const SuggestAccounts = () => {
       <p className='text-gray-500 font-semibold m-3 mt-4 hidden xl:block'>Suggested Accounts</p>
       <div>
         {allUsers.slice(0, 6).map((user: IUser)=> (
-          <Link href={`/profile/${user._id}`} key={user._id}>
-            
+          <Link href={`/profile/${user._id}`} key={user._id}> 
             <div className='flex gap-3 hover:bg-primary p-2 cursor-pointer font-semibold rounded'>
               <div className='w-8 h-8'>
                 <Image 
@@ -28,25 +26,19 @@ const SuggestAccounts = () => {
                 height={34}
                 className="rounded-full"
                 alt='Not Found'
-                layout="responsive"/>
-
-              </div>
-
+                layout="responsive"/> 
+              </div> 
               <div className='hidden xl:block'>
                 <p className='flex gap-1 items-center text-md font-bold text-primary lowercase'>
                   {user.userName.replaceAll(' ', '')}
-                  <GoVerified className='text-blue-400 '/>
-
+                  <GoVerified className='text-blue-400 '/> 
                 </p>
-                <p className='capitalize text-gray-400 text-xs'>{user.userName}</p>
-
-              </div>
-
+                <p className='capitalize text-gray-400 text-xs'>{user.userName}</p> 
+              </div> 
             </div>
           </Link>
         ))}
-        </div> 
-
+        </div>  
     </div>
   )
 }

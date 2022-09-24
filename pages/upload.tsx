@@ -19,29 +19,24 @@ const Upload = () => {
   const [savingPost, setSavingPost] = useState(false);
   const [topic, setTopic] = useState('');
    const {userProfile} : {userProfile: any}  = useAuthStore();
-  const router = useRouter();
-
+  const router = useRouter(); 
   const uploadVideo = async (e: any) => {
     const selectedFile = e.target.files[0];
     const fileTypes = ['video/mp4', 'video/webm', 'video/ogg'];
     if(fileTypes.includes(selectedFile.type)){
       client.assets.upload('file', selectedFile, {
         contentType: selectedFile.type,
-        filename: selectedFile.name
-
+        filename: selectedFile.name 
       })
        .then((data)=>{
         setVideoAsset(data);
         setIsLoading(false)
-       })
-
+       }) 
     }else {
-      setIsLoading(false);
-       
+      setIsLoading(false); 
       setWrongFileType(true);
     }
-  } 
-
+  }  
   const handlePost = async ()=> {
     if(caption && videoAsset?._id && category) {
       setSavingPost(true);

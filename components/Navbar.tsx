@@ -8,9 +8,7 @@ import {BiSearch} from 'react-icons/bi';
 import { IoMdAdd } from 'react-icons/io';
 import Logo from '../utils/tiktik-logo.png';
 import useAuthStore from '../store/authStore';
-import { createOrGetUser } from '../utils';
-
-
+import { createOrGetUser } from '../utils'; 
 const Navbar = () => {
    const { userProfile, addUser, removeUser } = useAuthStore();
    const [searchValue, setSearchValue] = useState('');
@@ -49,8 +47,7 @@ const Navbar = () => {
          />
          <button className='absolute md:right-5 right-6 top-4 border-l-2 border-gray-300 pl-4 text-2xl text-gray-400'>
              <BiSearch/>
-         </button>
- 
+         </button> 
        </div>
       <div>
         {userProfile ? (

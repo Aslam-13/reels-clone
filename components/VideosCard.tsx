@@ -7,10 +7,9 @@ import Link from 'next/link';
 import {HiVolumeUp, HiVolumeOff} from 'react-icons/hi';
 import {BsPlay, BsFillPlayFill, BsFillPauseFill } from 'react-icons/bs';
 import {GoVerified} from 'react-icons/go';
-  interface IProps {
+interface IProps {
   post: Video;
-}
- 
+} 
   
 const VideosCard: NextPage<IProps> = ({post}) => {
   const [isHover, setIsHover] = useState(false);
@@ -18,11 +17,9 @@ const VideosCard: NextPage<IProps> = ({post}) => {
   const [isVideoMuted, setIsVideoMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const onVideoPress = ()=>{
-    if(playing){
-
+    if(playing){ 
       videoRef?.current?.pause();
-      setPlaying(false);
-       
+      setPlaying(false); 
     }else {
       videoRef?.current?.play();
       setPlaying(true)
@@ -38,8 +35,7 @@ const VideosCard: NextPage<IProps> = ({post}) => {
       <div>
         <div className='flex gap-3 p-2 cursor-pointer font-semibold rounded'>
           <div className='md:w-16 md:h-16 w-10 h-10'>
-            <Link href={`/profile/${post.postedBy._id}`}>
-
+            <Link href={`/profile/${post.postedBy._id}`}> 
               <>
                 <Image
                 width={62}
@@ -48,19 +44,15 @@ const VideosCard: NextPage<IProps> = ({post}) => {
                 src={post.postedBy.image}
                 alt="Not Found"
                 layout="responsive"
-                />
-
+                /> 
               </>
-            </Link>
-
-          </div>
-
+            </Link> 
+          </div> 
         <Link href={`/profile/${post.postedBy._id}`}>
           <div  className='flex items-center gap-2'>
             <p className='flex gap-2 items-center md:text-md font-bold text-primary'>
               {post.postedBy.userName} {` `}
-              <GoVerified className='text-blue-400 text-md'/>
-
+              <GoVerified className='text-blue-400 text-md'/> 
             </p>
             <p className='capitalize font-medium text-xs text-gray-500 hidden md:block'>{post.postedBy.userName}</p>
           </div>
@@ -83,30 +75,25 @@ const VideosCard: NextPage<IProps> = ({post}) => {
               <div className='absolute bottom-6 cursor-pointer left-8 md:left-14 lg:left-0 flex gap-10 lg:justify-between w-[100px] md:w-[50px] p-3'>
                 {playing? (
                   <button onClick={onVideoPress}>
-                    <BsFillPauseFill className='text-black text-2xl lg:text-4xl'/>
-
+                    <BsFillPauseFill className='text-black text-2xl lg:text-4xl'/> 
                   </button>
                 ):(
                   <button onClick={onVideoPress}>
-                    <BsFillPlayFill className='text-black text-2xl lg:text-4xl'/>
-                    
+                    <BsFillPlayFill className='text-black text-2xl lg:text-4xl'/> 
                   </button>
                 )}
                 {isVideoMuted? (
                   <button onClick={()=> setIsVideoMuted(false)}>
-                    <HiVolumeOff className='text-black text-2xl lg:text-4xl'/>
-
+                    <HiVolumeOff className='text-black text-2xl lg:text-4xl'/> 
                   </button>
                 ):(
                   <button onClick={()=> setIsVideoMuted(true)}>
-                    <HiVolumeUp className='text-black text-2xl lg:text-4xl'/>
-
+                    <HiVolumeUp className='text-black text-2xl lg:text-4xl'/> 
                   </button>
                 )}
               </div>
              )}
-          </div>
-
+          </div> 
         </div>
         </div>
   )

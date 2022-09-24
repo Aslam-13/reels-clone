@@ -3,8 +3,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { GoVerified } from 'react-icons/go';
 import Link from 'next/link';
-import axios from 'axios';
-
+import axios from 'axios'; 
 import NoResults from '../../components/NoResults';
 import VideoCard from '../../components/VideosCard';
 import useAuthStore from '../../store/authStore';
@@ -13,11 +12,9 @@ import { IUser, Video } from '../../type';
 
 const Search = ({ videos }: { videos: Video[] }) => {
   const [isAccounts, setIsAccounts] = useState(false);
-  const { allUsers }: { allUsers: IUser[] } = useAuthStore();
-
+  const { allUsers }: { allUsers: IUser[] } = useAuthStore(); 
   const router = useRouter();
-  const { searchTerm }: any = router.query;
-
+  const { searchTerm }: any = router.query; 
   const accounts = isAccounts ? 'border-b-2 border-black' : 'text-gray-400';
   const isVideos = !isAccounts ? 'border-b-2 border-black' : 'text-gray-400';
   const searchedAccounts = allUsers?.filter((user: IUser) => user.userName.toLowerCase().includes(searchTerm));

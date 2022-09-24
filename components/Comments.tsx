@@ -1,8 +1,7 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { GoVerified } from 'react-icons/go';
-
+import { GoVerified } from 'react-icons/go'; 
 import useAuthStore from '../store/authStore';
 import NoResults from './NoResults';
 import { IUser } from '../type';
@@ -46,8 +45,7 @@ const Comments = ({ comment, setComment, addComment, comments, isPostingComment 
                               alt='user-profile'
                               layout='responsive'
                             />
-                          </div>
-
+                          </div> 
                           <p className='flex cursor-pointer gap-1 items-center text-[18px] font-bold leading-6 text-primary'>
                             {user.userName}{' '}
                             <GoVerified className='text-blue-400' />
